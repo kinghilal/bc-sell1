@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = "-";
+const prefix = -;
 
 
 
@@ -122,7 +122,7 @@ client.on("message", async message => {
     }
 });
 client.on("message", async message => {
-    if(message.content.startsWith(prefix + "banned")) {
+    if(message.content.startsWith(prefix - "banned")) {
         if(!message.guild) return;
         message.guild.fetchBans()
         .then(bans => {
@@ -133,7 +133,7 @@ client.on("message", async message => {
     }
 });
 client.on("message", async message => {
-    if(message.content.startsWith(prefix + "invite")) {
+    if(message.content.startsWith(prefix - "invite")) {
         let invite = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setAuthor(message.author.username, message.author.displayAvatarURL)
@@ -144,7 +144,7 @@ client.on("message", async message => {
     }
 });
 client.on("message", async message => {
-    if(message.content.startsWith(prefix + "help")) {
+    if(message.content.startsWith(prefix - "help")) {
         let help = new Discord.RichEmbed()
             .setColor("RANDOM")
             .setThumbnail(message.author.avatarURL)
@@ -154,8 +154,8 @@ client.on("message", async message => {
             دعوة البوت لسيرفرك : ${prefix}invite
             معلومات عن السيرفر : ${prefix}server
             برودكاست للأونلاين فقط : ${prefix}bco
-            يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
-            رابط سيرفر الدعم الفني : https://discord.gg/YEXcDXt 
+            يعرض لك عدد المتبندين من سيرفرك : -{prefix}banned
+            رابط سيرفر الدعم الفني : https://discord.gg/h2wzuNK 
             **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
